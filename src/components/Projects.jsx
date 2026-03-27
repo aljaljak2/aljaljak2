@@ -1,6 +1,13 @@
 import { FaGithub } from 'react-icons/fa'
 import styles from './Projects.module.css'
 
+// Import images
+import tennisImage from '../assets/images/det.png'
+import bearImage from '../assets/images/image_detection.png'
+import remoteControlImage from '../assets/images/secureremote.png'
+import furnitureImage from '../assets/images/home.gif'
+import realEstateImage from '../assets/images/real-estate.png'
+
 const projectsData = [
   {
     id: 1,
@@ -8,7 +15,8 @@ const projectsData = [
     description: 'Computer vision app for tracking players and ball in tennis matches, with statistical analysis of movement and distance. Built with YOLOv5 and Deep SORT.',
     tags: ['Python', 'YOLOv5', 'Deep SORT', 'OpenCV', 'Homography'],
     github: 'https://github.com/aljaljak2/Bachelor_rad-CV-for-tracking',
-    imageText: 'Tennis tracking with bounding boxes'
+    image: tennisImage,
+    imageAlt: 'Tennis tracking with bounding boxes'
   },
   {
     id: 2,
@@ -16,7 +24,8 @@ const projectsData = [
     description: 'YOLOv8 model trained from scratch on a custom dataset of bears in Bosnian forests. Packaged as a desktop app with GUI — no ML knowledge required to use it.',
     tags: ['Python', 'YOLOv8', 'PyTorch', 'Custom Dataset', 'GUI'],
     github: 'https://github.com/aljaljak2/VI-projekat-Bear-Detection',
-    imageText: 'Bear detection GUI'
+    image: bearImage,
+    imageAlt: 'Bear detection GUI'
   },
   {
     id: 3,
@@ -24,7 +33,8 @@ const projectsData = [
     description: 'Android client of a distributed remote control platform with real-time screen sharing, WebRTC streaming, and OAuth 2.0 authentication. Built as part of a multi-team university project.',
     tags: ['Android', 'Kotlin', 'WebRTC', 'WebSocket', 'OAuth 2.0'],
     github: 'https://github.com/SI-SecureRemoteControl/Client-Side-Android-app',
-    imageText: 'Remote control architecture'
+    image: remoteControlImage,
+    imageAlt: 'Remote control architecture'
   },
   {
     id: 4,
@@ -32,7 +42,8 @@ const projectsData = [
     description: 'Full-stack e-commerce application built with ASP.NET Core MVC and C#. Features product listings, user authentication, and SQL database integration with production deployment.',
     tags: ['C#', 'ASP.NET Core MVC', 'SQL', 'SmartestASP'],
     github: 'https://github.com/aljaljak2/Modern_home',
-    imageText: 'Furniture e-commerce'
+    image: furnitureImage,
+    imageAlt: 'Furniture e-commerce'
   },
   {
     id: 5,
@@ -40,7 +51,8 @@ const projectsData = [
     description: 'Property listing platform with Node.js and Express backend, asynchronous AJAX communication, and role-based access control.',
     tags: ['Node.js', 'Express', 'JavaScript', 'AJAX', 'HTML/CSS'],
     github: 'https://github.com/aljaljak2/Real-estate-web-app',
-    imageText: 'Real estate listings'
+    image: realEstateImage,
+    imageAlt: 'Real estate listings'
   }
 ]
 
@@ -50,9 +62,17 @@ function ProjectCard({ project, index }) {
   return (
     <div className={`${styles.card} ${isEven ? styles.cardEven : styles.cardOdd}`}>
       <div className={styles.imageContainer}>
-        <div className={styles.placeholder}>
-          <span>{project.imageText}</span>
-        </div>
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.imageAlt}
+            className={styles.projectImage}
+          />
+        ) : (
+          <div className={styles.placeholder}>
+            <span>{project.imageAlt}</span>
+          </div>
+        )}
       </div>
       <div className={styles.content}>
         <h3 className={styles.projectTitle}>{project.title}</h3>

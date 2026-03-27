@@ -1,4 +1,5 @@
 import styles from './About.module.css'
+import profileImage from '../assets/images/me.jpg'
 
 function About() {
   return (
@@ -29,9 +30,11 @@ function About() {
           </p>
         </div>
         <div className={styles.imageContainer}>
-          <div className={styles.placeholder}>
-            <span>Ali Ljaljak</span>
-          </div>
+          <img
+            src={profileImage}
+            alt="Ali Ljaljak"
+            className={styles.profileImage}
+          />
         </div>
       </div>
     </section>
