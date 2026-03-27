@@ -1,0 +1,167 @@
+.projects {
+  padding: 100px 20px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #f0f6fc;
+}
+
+.projectsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 30px;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #58a6ff;
+}
+
+.cardEven {
+  grid-template-columns: 1fr 1fr;
+}
+
+.cardOdd {
+  grid-template-columns: 1fr 1fr;
+}
+
+.cardOdd .imageContainer {
+  order: 2;
+}
+
+.cardOdd .content {
+  order: 1;
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder {
+  width: 100%;
+  height: 280px;
+  border-radius: 6px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b949e;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #f0f6fc;
+}
+
+.description {
+  color: #c9d1d9;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  padding: 0.3rem 0.8rem;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  color: #8b949e;
+}
+
+.githubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #58a6ff;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  width: fit-content;
+}
+
+.githubLink:hover {
+  color: #79c0ff;
+}
+
+@media (max-width: 968px) {
+  .card,
+  .cardEven,
+  .cardOdd {
+    grid-template-columns: 1fr;
+  }
+
+  .cardOdd .imageContainer,
+  .cardOdd .content {
+    order: unset;
+  }
+
+  .imageContainer {
+    order: -1;
+  }
+
+  .placeholder {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 60px 20px;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .card {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .projectTitle {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .placeholder {
+    height: 180px;
+    font-size: 0.85rem;
+  }
+}

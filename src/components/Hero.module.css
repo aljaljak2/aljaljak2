@@ -1,0 +1,80 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.content {
+  max-width: 800px;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #f0f6fc;
+  letter-spacing: -0.02em;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #c9d1d9;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #8b949e;
+  margin-bottom: 2rem;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.iconButton {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  background: transparent;
+  color: #c9d1d9;
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.iconButton:hover {
+  background: #161b22;
+  border-color: #58a6ff;
+  color: #58a6ff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .iconButton {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+}
