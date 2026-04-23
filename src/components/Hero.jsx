@@ -1,5 +1,6 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload } from 'react-icons/fa'
 import styles from './Hero.module.css'
+import cvFile from '../assets/CV-Ali_Ljaljak.pdf'
 
 function Hero() {
   return (
@@ -11,6 +12,15 @@ function Hero() {
           Faculty of Electrical Engineering, University of Sarajevo
         </p>
         <div className={styles.links}>
+          <a
+            href={cvFile}
+            download="Ali_Ljaljak_CV.pdf"
+            className={styles.iconButton}
+            aria-label="Download CV"
+            title="Download CV"
+          >
+            <FaFileDownload />
+          </a>
           <a
             href="https://github.com/aljaljak2"
             target="_blank"
